@@ -1,6 +1,5 @@
 import UIKit
 import Flutter
-import GoogleMaps
 
 @UIApplicationMain
 @objc class AppDelegate: FlutterAppDelegate {
@@ -8,8 +7,8 @@ import GoogleMaps
     _ application: UIApplication,
     didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
   ) -> Bool {
-    GMSServices.provideAPIKey("AIzaSyB2ATG2RWPgTdPElAMPPI0kp2rOD3kyRg8")
     GeneratedPluginRegistrant.register(with: self)
+    UIApplication.shared.setMinimumBackgroundFetchInterval(TimeInterval(60*15))
     return super.application(application, didFinishLaunchingWithOptions: launchOptions)
   }
 }
